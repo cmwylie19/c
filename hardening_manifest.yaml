@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+
+name: "opensource/foo/bar"
+
+tags:
+- "0.0.0"
+- "latest"
+
+args:
+  BASE_IMAGE: "redhat/ubi/ubi8"
+  BASE_TAG: "8.6"
+
+labels:
+  org.opencontainers.image.title: "title"
+  org.opencontainers.image.description: "description"
+  org.opencontainers.image.licenses: "Apache-2.0"
+  org.opencontainers.image.url: "https://url"
+  org.opencontainers.image.vendor: "vendor"
+  org.opencontainers.image.version: "0.0.0"
+  mil.dso.ironbank.image.keywords: "tag1,tag2,tag3"
+  mil.dso.ironbank.image.type: "opensource"
+  mil.dso.ironbank.product.name: "name"
+
+resources:
+- filename: 
+  url: 
+  validation:
+    type: sha256
+    value: 
+
+maintainers:
+- email: "username@example.com"
+  name: "FirstName LastName"
+  username: "UserName"
+  cht_member: true/false
