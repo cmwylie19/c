@@ -8,8 +8,8 @@ tags:
 - "latest"
 
 args:
-  BASE_IMAGE: "redhat/ubi/ubi8"
-  BASE_TAG: "8.7"
+  BASE_IMAGE: "redhat/ubi/ubi9"
+  BASE_TAG: "9.2"
 
 labels:
   org.opencontainers.image.title: "title"
@@ -28,9 +28,12 @@ resources:
   validation:
     type: sha256
     value: 
+### For Docker dependencies
+- tag:
+  url: docker://
 
 maintainers:
 - email: "username@example.com"
   name: "FirstName LastName"
   username: "UserName"
-  cht_member: true/false
+  cht_member: false
