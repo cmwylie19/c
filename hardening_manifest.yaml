@@ -23,14 +23,14 @@ labels:
   mil.dso.ironbank.product.name: "name"
 
 resources:
-- filename: 
-  url: 
+- filename: "filename.extension"
+  url: "https://example.com:"
   validation:
     type: sha256
-    value: 
+    value: "23847563487563487563487653428756243857623443654236"
 ### For Docker dependencies
-- tag:
-  url: docker://
+- tag: "example/product:version"
+  url: "docker://<image-registry>/<image-path>@sha256:38745638353554762349856342985672349863459834675"
 
 maintainers:
 - email: "username@example.com"
