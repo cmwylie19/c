@@ -27,10 +27,10 @@ resources:
   url: "https://example.com:"
   validation:
     type: sha256
-    value: "23847563487563487563487653428756243857623443654236"
+    value: "c5c5fda71653898e49ac9c5416b358ghaa6a108a8093151dhg85fc9463be8e33"
 ### For Docker dependencies
-- tag: "example/product:version"
-  url: "docker://<image-registry>/<image-path>@sha256:38745638353554762349856342985672349863459834675"
+- tag: "example/product:1.0.0"
+  url: "docker://docker.io/image/path@sha256:c5c5fda71653898e49ac9c5416b358ghaa6a108a8093151dhg85fc9463be8e33"
 
 maintainers:
 - email: "username@example.com"
