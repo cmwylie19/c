@@ -18,19 +18,19 @@ labels:
   org.opencontainers.image.url: "https://url"
   org.opencontainers.image.vendor: "vendor"
   org.opencontainers.image.version: "0.0.0"
-  mil.dso.ironbank.image.keywords: "tag1,tag2,tag3"
+  mil.dso.ironbank.image.keywords: " "
   mil.dso.ironbank.image.type: "opensource"
   mil.dso.ironbank.product.name: "name"
 
 resources:
 - filename: "filename.extension"
-  url: "https://example.com:"
+  url: "https://example.com/path/to/file.tar.gz"
   validation:
     type: sha256
-    value: "c5c5fda71653898e49ac9c5416b358ghaa6a108a8093151dhg85fc9463be8e33"
+    value: ""
 ### For Docker dependencies
-- tag: "example/product:1.0.0"
-  url: "docker://docker.io/image/path@sha256:c5c5fda71653898e49ac9c5416b358ghaa6a108a8093151dhg85fc9463be8e33"
+- tag: "product/name:1.0.0"
+  url: "docker://<image-registry>/name/of/product@sha256:<value>"
 
 maintainers:
 - email: "username@example.com"
