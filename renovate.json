@@ -1,0 +1,3 @@
+# Renovate is an automation tool that Iron Bank leverages to help with auto dependency updates.
+# For more information on renovate, you can view that on the public Iron Bank documentation site here: https://docs-ironbank.dso.mil/hardening/repository-structure/#5-renovatejson and https://docs-ironbank.dso.mil/tutorials/local-renovate-testing/
+# A high level example of how you can use Renovate to help with these automatic dependency updates can be found with Iron Bank's kubernetes-1.27 kube-scheduler: https://repo1.dso.mil/dsop/opensource/kubernetes/1.27/kube-scheduler/-/blob/development/renovate.json 

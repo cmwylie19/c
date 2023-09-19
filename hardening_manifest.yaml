@@ -8,8 +8,8 @@ tags:
 - "latest"
 
 args:
-  BASE_IMAGE: "redhat/ubi/ubi8"
-  BASE_TAG: "8.7"
+  BASE_IMAGE: "redhat/ubi/ubi9"
+  BASE_TAG: "9.2"
 
 labels:
   org.opencontainers.image.title: "title"
@@ -18,19 +18,22 @@ labels:
   org.opencontainers.image.url: "https://url"
   org.opencontainers.image.vendor: "vendor"
   org.opencontainers.image.version: "0.0.0"
-  mil.dso.ironbank.image.keywords: "tag1,tag2,tag3"
+  mil.dso.ironbank.image.keywords: " "
   mil.dso.ironbank.image.type: "opensource"
   mil.dso.ironbank.product.name: "name"
 
 resources:
-- filename: 
-  url: 
+- filename: "filename.extension"
+  url: "https://example.com/path/to/file.tar.gz"
   validation:
     type: sha256
-    value: 
+    value: ""
+### For Docker dependencies
+- tag: "product/name:1.0.0"
+  url: "docker://<image-registry>/name/of/product@sha256:<value>"
 
 maintainers:
 - email: "username@example.com"
   name: "FirstName LastName"
   username: "UserName"
-  cht_member: true/false
+  cht_member: false
