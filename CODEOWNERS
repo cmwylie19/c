@@ -1,0 +1,6 @@
+* @jeff-mccoy @cmwylie19 @btlghrants
+
+# Additional privileged files
+/CODEOWNERS @jeff-mccoy @austenbryan
+/cosign.pub @jeff-mccoy @austenbryan
+/LICENSE @jeff-mccoy @austenbryan

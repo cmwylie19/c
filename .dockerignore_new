@@ -1,0 +1,16 @@
+*.tar.gz
+mocks
+_images
+adr
+CODEOWNERS
+codecov.yaml
+commitlint.config.js
+Dockerfile
+Dockerfile.controller
+docs
+jest.config.json
+journey
+netlify.toml
+osv-scanner.toml
+pepr-upgrade-test
+.vscode

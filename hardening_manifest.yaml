@@ -1,39 +1,44 @@
 ---
 apiVersion: v1
 
-name: "opensource/foo/bar"
+name: "opensource/defenseunicorns/pepr/controller"
 
 tags:
-- "0.0.0"
-- "latest"
+- "v0.23.2"
 
 args:
-  BASE_IMAGE: "redhat/ubi/ubi9"
-  BASE_TAG: "9.2"
+  BASE_IMAGE: "ironbank/opensource/nodejs/nodejs18"
+  BASE_TAG: "18.19.0-slim"
 
 labels:
-  org.opencontainers.image.title: "title"
-  org.opencontainers.image.description: "description"
+  org.opencontainers.image.title: "controller"
+  org.opencontainers.image.description: "Pepr Controller"
   org.opencontainers.image.licenses: "Apache-2.0"
-  org.opencontainers.image.url: "https://url"
-  org.opencontainers.image.vendor: "vendor"
-  org.opencontainers.image.version: "0.0.0"
-  mil.dso.ironbank.image.keywords: " "
+  org.opencontainers.image.url: "https://github.com/defenseunicorns/pepr"
+  org.opencontainers.image.vendor: "Defense Unicorns"
+  org.opencontainers.image.version: "v0.23.2"
+  mil.dso.ironbank.image.keywords: "operator,pepr,controller,kubernetes,admission,mutating,validating,webook"
   mil.dso.ironbank.image.type: "opensource"
-  mil.dso.ironbank.product.name: "name"
+  mil.dso.ironbank.product.name: "controller"
 
 resources:
-- filename: "filename.extension"
-  url: "https://example.com/path/to/file.tar.gz"
+- filename: "v0.23.2.tar.gz"
+  url: "https://github.com/defenseunicorns/pepr/archive/refs/tags/v0.23.2.tar.gz"
   validation:
     type: sha256
-    value: ""
-### For Docker dependencies
-- tag: "product/name:1.0.0"
-  url: "docker://<image-registry>/name/of/product@sha256:<value>"
+    value: "acbe9802437fdfa5279a2f1f45e6f66536b605d92543dfed81df99bf800a1879"
 
 maintainers:
-- email: "username@example.com"
-  name: "FirstName LastName"
-  username: "UserName"
-  cht_member: false
+- email: "cmwylie19@defenseunicorns.com"
+  name: "Case Wylie"
+  username: "cmwylie19"
+- email: "kim@defenseunicorns.com"
+  name: "Kim Schaefer"
+  username: "kaschaefer"
+- email: "barrett@defenseunicorns.com"
+  name: "Barrett LaFrance"
+  username: "barrett.lafrance"
+- email: "megamind@defenseunicorns.com"
+  name: "Jeff McCoy"
+  username: "megamind"
+
