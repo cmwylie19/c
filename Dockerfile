@@ -1,36 +1,34 @@
-### BUILD ###
+# ARG BASE_REGISTRY=registry1.dso.mil
+# ARG BASE_IMAGE=ironbank/opensource/nodejs/nodejs18
+# ARG BASE_TAG=18.18
 
-FROM docker.io/library/node:20-alpine as with-git
+FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG} as builder
 
 WORKDIR /app
 
-# install git
-RUN apk --no-cache add git
+# Unzip the tar.gz file that contains the latest release
+RUN tar -xzf /tmp/pepr.tgz . && \
+    mv pepr-* pepr && \
+    mv pepr/* . 
 
-# Copy the node config files
-COPY --chown=node:node ./package*.json ./
+COPY --chown=node:node . .
 
 # Load only direct dependencies for Production use
-RUN npm ci --omit=dev --omit=peer && \
-    # Clean up npm cache
+RUN npm ci && \
+    npm run build && \
     npm cache clean --force && \
     # Remove @types
     rm -fr node_modules/@types && \
     # Remove Ramda unused Ramda files
     rm -fr node_modules/ramda/dist && \
     rm -fr node_modules/ramda/es && \
-    # Remove all typescript files
-    find . -name "*.ts" -type f -delete
-
-# Sync the pepr dist files
-COPY --chown=node:node ./dist/  ./node_modules/pepr/dist/
-COPY --chown=node:node ./package.json  ./node_modules/pepr/package.json
+    mkdir node_modules/pepr && \
+    mv ./dist/ node_modules/pepr/dist && \
+    mv package.json node_modules/pepr/package.json
 
 
-##### DELIVER #####
+FROM registry1.dso.mil/ironbank/opensource/nodejs/nodejs18:18.18
 
-FROM cgr.dev/chainguard/node:20@sha256:f30d39c6980f0a50119f2aa269498307a80c2654928d8e23bb25431b9cbbdc4f
-
+USER 65532:65532
 WORKDIR /app
-
-COPY --from=with-git --chown=node:node /app/ /app/
+COPY --from=builder --chown=node:node /app/node_modules /app/node_modules

@@ -8,7 +8,7 @@ tags:
 
 args:
   BASE_IMAGE: "ironbank/opensource/nodejs/nodejs18"
-  BASE_TAG: "18.19.0-slim"
+  BASE_TAG: "18.18"
 
 labels:
   org.opencontainers.image.title: "controller"

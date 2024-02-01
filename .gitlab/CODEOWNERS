@@ -1,6 +1,0 @@
-[Pipelines]
-.gitlab-ci.yml @ironbank-notifications/cht
-.gitlab-ci.yaml @ironbank-notifications/cht
-
-[Gitlab Configuration Files]
-.gitlab/* @ironbank-notifications/cht
